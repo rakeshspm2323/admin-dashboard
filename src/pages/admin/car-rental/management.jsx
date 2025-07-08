@@ -76,7 +76,7 @@ export default function CarRentalManagement() {
           </div>
         </div>
         {/* Review Form */}
-        <h2 className="text-md font-semibold mt-5 leading-8">Review Form</h2>
+        <h2 className="text-md font-semibold mt-5 leading-8">Car Review Form</h2>
         <div className="border-l-2 border-teal-700 p-2 bg-white/30 backdrop-blur-lg rounded-lg shadow-md">
           {/* <ReviewForm /> */}
         </div>
