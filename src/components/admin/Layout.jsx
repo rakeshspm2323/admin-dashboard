@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 // import "../../app/globals.css";
 import Image from "next/image";
-
 import SidebarContent from "./Sidebar";
 // Dynamic imports for icons
 import { BarIcon, BellIcon, MessageIcon } from "../icon";
-// import { useAppContext } from "./context/Package/AddGuest";
+import { useAuth } from "@/context/AuthContext";
+import logo1 from "../../../public/logo1.jpeg";
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,7 +15,8 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState([]);
   const sidebarRef = useRef();
-//   const { setToglePopup, toglePopup } = useAppContext();
+  const { setToglePopup, toglePopup } = useAuth();
+  
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
     setIsMediumDevice(mediaQuery.matches);
@@ -83,8 +84,7 @@ const Layout = ({ children }) => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-    // console.log("togle side bar ")
-    // setToglePopup(!toglePopup);
+    setToglePopup(!toglePopup);
   };
 
   return (
@@ -106,33 +106,33 @@ const Layout = ({ children }) => {
         }`}
       >
         <div className="sticky top-0 z-30 shadow-md backdrop-blur-xl bg-white/80 py-3 px-4 flex items-center gap-5">
-          <div className="cursor-pointer" onClick={toggleSidebar}>
+          <div className="cursor-pointer text-black" onClick={toggleSidebar}>
             <BarIcon
               size={26}
-              className=" mt-[7px] text-[#939ba2] hover:text-black"
+              className="mt-[7px]"
             />
           </div>
-          <div className="flex justify-between w-full">
+          <div className="flex md:justify-end justify-between w-full text-black">
             <Image
-              className="w-[220px]"
-              src="/public/vercel.svg"
-              alt="Logo"
+              className="md:hidden w-10 h-10 rounded-full"
+              src={logo1}
+              alt="User"
               width={320}
               height={400}
             />
             <div className="flex items-center gap-5">
               <BellIcon
-                className="text-[#939ba2] hover:text-black cursor-pointer"
+                className="cursor-pointer"
                 size={20}
               />
               <MessageIcon
-                className="text-[#939ba2] hover:text-black cursor-pointer"
+                className="cursor-pointer"
                 size={20}
               />
               <div className="flex items-center gap-3">
                 <Image
                   className="hidden sm:block w-10 h-10 rounded-full"
-                  src="/public/vercel.svg"
+                  src={logo1}
                   alt="User"
                   width={320}
                   height={400}

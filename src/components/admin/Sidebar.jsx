@@ -9,6 +9,7 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { IoIosArrowDown } from "react-icons/io";
+import logo1 from "../../../public/logo1.jpeg"
 
 const SidebarContent = () => {
   const router = useRouter();
@@ -106,7 +107,7 @@ const SidebarContent = () => {
         <div className="sm:flex items-center block gap-4 py-4 border-b border-b-white">
           <Image
             className="w-16 border-2 border-primary rounded-full"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={logo1 || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
             alt="User"
             width={320}
             height={400}
