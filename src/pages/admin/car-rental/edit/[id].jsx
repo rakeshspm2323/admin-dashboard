@@ -27,14 +27,14 @@ export default function Edit() {
 
   return (
     <Layout>
-      <div className="md:p-5 p-0 text-black">
+      <div className="md:px-5 px-0 pt-5 text-black">
         <h1 className="text-[18px] font-bold mb-4">Car Rental Edit Management</h1>
         <div className="border-l-2 border-teal-700 bg-white/30 backdrop-blur-lg rounded-lg shadow-md mt-5 text-black">
         <div className="pl-5 py-5">
             <p className="font-semibold text-[16px]">Edit Listing</p>
         </div>
         <div className="h-36 overflow-y-auto px-5">
-            <input className="p-2 mb-8 w-full rounded-md outline-none border" value={car} onChange={(e) => setCar(e.target.value)} />
+            <input className="p-2 mb-8 block w-full rounded-md text-black border outline-none  shadow-sm ring-inset placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-orange-400" value={car} onChange={(e) => setCar(e.target.value)} />
             <button onClick={handleSave} className="bg-black/80 text-white px-4 py-2 rounded w-full cursor-pointer">Save</button>
         </div>
         </div>

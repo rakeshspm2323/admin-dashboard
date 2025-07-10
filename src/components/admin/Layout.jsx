@@ -6,7 +6,7 @@ import SidebarContent from "./Sidebar";
 // Dynamic imports for icons
 import { BarIcon, BellIcon, MessageIcon } from "../icon";
 import { useAuth } from "@/context/AuthContext";
-import logo1 from "../../../public/logo1.jpeg";
+import logo from "../../../public/logo1.jpeg";
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -115,7 +115,7 @@ const Layout = ({ children }) => {
           <div className="flex md:justify-end justify-between w-full text-black">
             <Image
               className="md:hidden w-10 h-10 rounded-full"
-              src={logo1}
+              src={logo}
               alt="User"
               width={320}
               height={400}
@@ -132,7 +132,7 @@ const Layout = ({ children }) => {
               <div className="flex items-center gap-3">
                 <Image
                   className="hidden sm:block w-10 h-10 rounded-full"
-                  src={logo1}
+                  src={logo}
                   alt="User"
                   width={320}
                   height={400}

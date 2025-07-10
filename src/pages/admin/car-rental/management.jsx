@@ -10,7 +10,7 @@ import ListingTable from "@/components/ListingTable";
 export default function CarRentalManagement() {
   return (
     <Layout>
-      <div className="md:p-5 p-0 text-black">
+      <div className="md:px-5 px-0 pt-5 text-black">
         <h1 className="text-[18px] font-bold mb-4">Car Rental Management</h1>
         {/* Lists and Tables Section */}
           <div className="border-l-2 border-teal-700 bg-white/30 backdrop-blur-lg rounded-lg shadow-md mt-5">

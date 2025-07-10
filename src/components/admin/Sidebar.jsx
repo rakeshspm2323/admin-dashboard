@@ -10,24 +10,26 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { IoIosArrowDown } from "react-icons/io";
 import logo1 from "../../../public/logo1.jpeg"
+import { useAuth } from "@/context/AuthContext";
 
 const SidebarContent = () => {
+  const { setAuthenticated } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState(null);
   const [selectedSubMenu, setSelectedSubMenu] = useState(null);
 
   const handleLogout = async () => {
-    const response = await fetch("/api/account/logout", {
+    const response = await fetch("/api/logout", {
       method: "POST",
     });
 
     if (response.ok) {
-      console.log("User logged out");
-      // Optionally, redirect or perform any other action after logging out
+      setAuthenticated(false);
+      router.push("/");
     } else {
       console.error("Failed to log out");
     }
-    window.location.href = "/login";
+    window.location.href = "/";
   };
   const sidebarTabs = useMemo(
     () => [
@@ -68,7 +70,7 @@ const SidebarContent = () => {
 
   const handleTabToggle = (tabName) => {
     setActiveTab((prevTab) => (prevTab === tabName ? null : tabName));
-    console.log("Toggle Button clicked");
+    // console.log("Toggle Button clicked");
     setSelectedSubMenu(null);
   };
 

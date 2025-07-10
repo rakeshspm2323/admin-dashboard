@@ -55,7 +55,9 @@ export default function Login({page}) {
           setAuthenticated(true);
           router.push("/admin/dashboard");
         } else {
-          console.error("Failed to register user");
+          console.error("Invalid credentials");
+          setAuthenticated(false);
+          alert("Invalid username or password");
         }
       } catch (error) {
         console.error("Error during form submission:", error);
@@ -87,7 +89,7 @@ export default function Login({page}) {
                 autoComplete="username"
                 required
                 onChange={handleChange}
-                className={`block w-full rounded-md border-0 py-2 px-2 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6 ${
+                className={`block text-sm w-full rounded-md py-2 px-2 text-white border outline-none  shadow-sm ring-inset placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-orange-400 sm:leading-6 ${
                   errors.username ? "border-red-500" : ""
                 }`}
                 placeholder="Enter Username"
@@ -114,7 +116,7 @@ export default function Login({page}) {
                 autoComplete="current-password"
                 required
                 onChange={handleChange}
-                className={`block w-full rounded-md border-0 py-2 px-2 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6 ${
+                className={`block text-sm w-full rounded-md py-2 px-2 text-white border outline-none  shadow-sm ring-inset placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-orange-400 sm:leading-6 ${
                   errors.password ? "border-red-500" : ""
                 }`}
                 placeholder="Enter Password"
